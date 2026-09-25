@@ -1,105 +1,247 @@
 """
-Official evaluation metrics: macro-averaged Precision, Recall, and F0.5 per Source 1 entity.
+Evaluation module for Person 4 Entity Resolution Pipeline.
+
+Implements:
+1. Source-1 entity level deterministic validation split (no leakage).
+2. Candidate generation metrics (Candidate Recall, Reduction Ratio, Candidates per query).
+3. Entity-level macro-averaged Precision, Recall, and F0.5 with explicit singleton handling.
+4. Experiment logging utilities for reports/experiments.csv.
 """
-from typing import Dict, List, Set, Tuple
+import csv
+import logging
+from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Set, Tuple
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+from src.config import config
+
+logger = logging.getLogger(__name__)
 
 
-def calculate_entity_metrics(
-    ground_truth_matches: Set[str],
-    predicted_matches: Set[str]
-) -> Tuple[float, float, float]:
+def create_source1_validation_split(
+    source1_ids: List[str],
+    val_ratio: float = 0.2,
+    seed: int = 42,
+) -> Tuple[List[str], List[str]]:
     """
-    Calculate Precision, Recall, and F0.5 for a single Source 1 entity.
-    F0.5 = (1 + 0.5^2) * P * R / (0.5^2 * P + R) = 1.25 * P * R / (0.25 * P + R)
+    Split Source 1 entity IDs into train and validation sets.
+    Deterministic, seeded, operating strictly at the Source 1 entity level.
     """
-    # Case 1: Ground truth is empty (true singleton)
-    if not ground_truth_matches:
-        if not predicted_matches:
-            # Correctly predicted no match
-            return 1.0, 1.0, 1.0
-        else:
-            # Predicted false matches for a singleton
-            return 0.0, 0.0, 0.0
+    unique_ids = sorted(list(set(source1_ids)))
+    if len(unique_ids) < 2:
+        return unique_ids, []
 
-    # Case 2: Ground truth has matches, but predicted is empty
-    if not predicted_matches:
-        return 0.0, 0.0, 0.0
-
-    # Case 3: Both non-empty
-    tp = len(ground_truth_matches & predicted_matches)
-    fp = len(predicted_matches - ground_truth_matches)
-    fn = len(ground_truth_matches - predicted_matches)
-
-    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-
-    if precision + recall == 0 or (0.25 * precision + recall) == 0:
-        f05 = 0.0
-    else:
-        f05 = (1.25 * precision * recall) / (0.25 * precision + recall)
-
-    return precision, recall, f05
+    train_ids, val_ids = train_test_split(
+        unique_ids,
+        test_size=val_ratio,
+        random_state=seed,
+        shuffle=True,
+    )
+    return sorted(train_ids), sorted(val_ids)
 
 
-def evaluate_macro_metrics(
+def compute_candidate_recall(
     ground_truth: Dict[str, List[str]],
-    predictions: Dict[str, List[str]]
+    candidates: Dict[str, List[str]],
 ) -> Dict[str, float]:
     """
-    Macro-average metrics across all Source 1 entities in ground truth.
+    Computes candidate generation metrics:
+    - candidate_recall: (true pairs in candidates) / (total true pairs in ground truth)
+    - total_candidates: sum of all candidates retrieved
+    - avg_candidates_per_entity: average candidate pool size per S1 entity
     """
-    total_p = 0.0
-    total_r = 0.0
-    total_f05 = 0.0
-    n = len(ground_truth)
+    total_true_pairs = 0
+    retrieved_true_pairs = 0
+    total_candidates = 0
 
-    if n == 0:
-        return {"precision": 0.0, "recall": 0.0, "f05": 0.0, "count": 0}
+    for s1_id, true_matches in ground_truth.items():
+        total_true_pairs += len(true_matches)
+        cand_set = set(candidates.get(s1_id, []))
+        total_candidates += len(cand_set)
 
-    singletons_total = 0
-    singletons_correct = 0
+        for m in true_matches:
+            if m in cand_set:
+                retrieved_true_pairs += 1
 
-    for s1_id, gt_list in ground_truth.items():
-        gt_set = set(gt_list)
-        pred_set = set(predictions.get(s1_id, []))
-        
-        p, r, f05 = calculate_entity_metrics(gt_set, pred_set)
-        total_p += p
-        total_r += r
-        total_f05 += f05
-
-        if not gt_set:
-            singletons_total += 1
-            if not pred_set:
-                singletons_correct += 1
-
-    singleton_acc = singletons_correct / singletons_total if singletons_total > 0 else 1.0
+    candidate_recall = (
+        (retrieved_true_pairs / total_true_pairs) if total_true_pairs > 0 else 1.0
+    )
+    num_queries = len(ground_truth) if len(ground_truth) > 0 else 1
+    avg_candidates = total_candidates / num_queries
 
     return {
-        "precision": total_p / n,
-        "recall": total_r / n,
-        "f05": total_f05 / n,
-        "singleton_accuracy": singleton_acc,
-        "total_entities": n,
-        "singletons_total": singletons_total,
+        "candidate_recall": candidate_recall,
+        "retrieved_true_pairs": retrieved_true_pairs,
+        "total_true_pairs": total_true_pairs,
+        "total_candidates": total_candidates,
+        "avg_candidates_per_entity": avg_candidates,
     }
 
 
-def evaluate_candidate_recall(
-    ground_truth: Dict[str, List[str]],
-    candidates: Dict[str, List[str]]
+def compute_reduction_ratio(
+    n_source1: int,
+    n_targets_pool: int,
+    total_candidates: int,
 ) -> float:
     """
-    Calculate upper-bound recall of true matches present in generated candidate pairs.
+    Computes reduction ratio:
+    1 - (total_candidates_generated / (n_source1 * n_targets_pool))
     """
-    total_true_matches = 0
-    recalled_matches = 0
+    total_cartesian_pairs = n_source1 * n_targets_pool
+    if total_cartesian_pairs == 0:
+        return 0.0
+    return 1.0 - (total_candidates / total_cartesian_pairs)
 
-    for s1_id, gt_list in ground_truth.items():
-        cand_set = set(candidates.get(s1_id, []))
-        for m in gt_list:
-            total_true_matches += 1
-            if m in cand_set:
-                recalled_matches += 1
 
-    return recalled_matches / total_true_matches if total_true_matches > 0 else 1.0
+def calculate_entity_f0_5(p: float, r: float) -> float:
+    """Calculates F0.5 score: 1.25 * P * R / (0.25 * P + R)."""
+    denom = 0.25 * p + r
+    if denom <= 0.0:
+        return 0.0
+    return (1.25 * p * r) / denom
+
+
+def evaluate_predictions(
+    ground_truth: Dict[str, List[str]],
+    predictions: Dict[str, List[str]],
+) -> Dict[str, Any]:
+    """
+    Evaluates predictions against ground truth using macro-averaged entity-level metrics.
+    Explicit singleton rules:
+    - true=[] & pred=[] => P=1.0, R=1.0, F0.5=1.0 (correct singleton)
+    - true=[] & pred=[x] => P=0.0, R=0.0, F0.5=0.0 (false positive singleton)
+    - true=[x] & pred=[] => P=0.0, R=0.0, F0.5=0.0 (missed true match)
+    """
+    precisions: List[float] = []
+    recalls: List[float] = []
+    f0_5_scores: List[float] = []
+
+    total_tp = 0
+    total_fp = 0
+    total_fn = 0
+    singleton_correct = 0
+    singleton_total = 0
+
+    for s1_id, true_list in ground_truth.items():
+        true_set = set(true_list)
+        pred_set = set(predictions.get(s1_id, []))
+
+        is_singleton = len(true_set) == 0
+        if is_singleton:
+            singleton_total += 1
+
+        if is_singleton and len(pred_set) == 0:
+            # Singleton entity correctly predicted with zero matches
+            p = 1.0
+            r = 1.0
+            f0_5 = 1.0
+            singleton_correct += 1
+        elif is_singleton and len(pred_set) > 0:
+            # Singleton entity incorrectly predicted with matches (False Positives)
+            p = 0.0
+            r = 0.0
+            f0_5 = 0.0
+            total_fp += len(pred_set)
+        elif not is_singleton and len(pred_set) == 0:
+            # Non-singleton entity missed completely (False Negatives)
+            p = 0.0
+            r = 0.0
+            f0_5 = 0.0
+            total_fn += len(true_set)
+        else:
+            tp = len(true_set.intersection(pred_set))
+            fp = len(pred_set - true_set)
+            fn = len(true_set - pred_set)
+
+            total_tp += tp
+            total_fp += fp
+            total_fn += fn
+
+            p = tp / len(pred_set) if len(pred_set) > 0 else 0.0
+            r = tp / len(true_set) if len(true_set) > 0 else 0.0
+            f0_5 = calculate_entity_f0_5(p, r)
+
+        precisions.append(p)
+        recalls.append(r)
+        f0_5_scores.append(f0_5)
+
+    n_entities = len(ground_truth) if len(ground_truth) > 0 else 1
+    macro_precision = float(np.mean(precisions)) if precisions else 0.0
+    macro_recall = float(np.mean(recalls)) if recalls else 0.0
+    macro_f0_5 = float(np.mean(f0_5_scores)) if f0_5_scores else 0.0
+    singleton_acc = (
+        (singleton_correct / singleton_total) if singleton_total > 0 else 1.0
+    )
+
+    return {
+        "macro_precision": macro_precision,
+        "macro_recall": macro_recall,
+        "macro_f0_5": macro_f0_5,
+        "singleton_accuracy": singleton_acc,
+        "singleton_count": singleton_total,
+        "total_tp": total_tp,
+        "total_fp": total_fp,
+        "total_fn": total_fn,
+        "evaluated_entities": len(ground_truth),
+    }
+
+
+def record_experiment_result(
+    experiment_id: str,
+    stage_desc: str,
+    metrics: Dict[str, Any],
+    parameters: Dict[str, Any],
+    notes: str = "",
+    csv_path: Optional[Path] = None,
+) -> None:
+    """
+    Appends an experiment record to reports/experiments.csv.
+    """
+    path = csv_path or config.EXPERIMENTS_CSV_PATH
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    fieldnames = [
+        "experiment_id",
+        "timestamp",
+        "stage_desc",
+        "macro_f0_5",
+        "macro_precision",
+        "macro_recall",
+        "candidate_recall",
+        "singleton_accuracy",
+        "total_tp",
+        "total_fp",
+        "total_fn",
+        "avg_candidates",
+        "parameters",
+        "notes",
+    ]
+
+    file_exists = path.is_file()
+
+    row = {
+        "experiment_id": experiment_id,
+        "timestamp": datetime.now().isoformat(),
+        "stage_desc": stage_desc,
+        "macro_f0_5": f"{metrics.get('macro_f0_5', 0.0):.4f}",
+        "macro_precision": f"{metrics.get('macro_precision', 0.0):.4f}",
+        "macro_recall": f"{metrics.get('macro_recall', 0.0):.4f}",
+        "candidate_recall": f"{metrics.get('candidate_recall', 0.0):.4f}",
+        "singleton_accuracy": f"{metrics.get('singleton_accuracy', 0.0):.4f}",
+        "total_tp": metrics.get("total_tp", 0),
+        "total_fp": metrics.get("total_fp", 0),
+        "total_fn": metrics.get("total_fn", 0),
+        "avg_candidates": f"{metrics.get('avg_candidates_per_entity', 0.0):.2f}",
+        "parameters": str(parameters),
+        "notes": notes,
+    }
+
+    with open(path, mode="a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        if not file_exists:
+            writer.writeheader()
+        writer.writerow(row)
+
+    logger.info(f"Recorded experiment {experiment_id} in {path}")

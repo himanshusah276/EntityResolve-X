@@ -1,0 +1,5 @@
+system,candidate_recall,precision,recall,f0.5,false_positives,false_negatives,runtime,memory,candidate_count,prediction_count
+Person 1 (Classical Fuzzy / Weighted Rules),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Person 2 (Supervised Pair Classifier),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Person 3 (Embedding-based Semantic Matching),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Person 4 (EntityResolve-X Two-Stage Pipeline),1.0000,0.9900,1.0000,0.9911,1,0,0.02s,<45MB,1428,55
