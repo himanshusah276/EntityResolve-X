@@ -1,0 +1,13 @@
+# Person 3 - Embedding-based Semantic Entity Resolution
+# Requirements
+
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+torch>=2.0.0
+transformers>=4.30.0
+sentence-transformers>=2.2.0
+pyarrow>=12.0.0
+rapidfuzz>=3.0.0
+duckdb>=0.9.0

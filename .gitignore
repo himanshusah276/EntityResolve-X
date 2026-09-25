@@ -1,0 +1,15 @@
+﻿# Challenge datasets
+data/
+*.tsv
+*.parquet
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local/cache/model artifacts
+*.pt
+*.pth
+*.bin
+*.pkl
