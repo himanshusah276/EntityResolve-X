@@ -1,0 +1,4 @@
+model_name,number_of_features,training_rows,positive_rows,negative_rows,training_runtime_seconds,scoring_runtime_seconds,approximate_memory_mb,internal_diagnostic_roc_auc,internal_diagnostic_pr_auc,artifact_path
+LogisticRegression,24,2407,89,2318,0.0159,0.0004,0.23,1.0,1.0,D:\Amazon Project\person2\models\person2_logisticregression.joblib
+RandomForest,24,2407,89,2318,0.1685,0.0282,0.23,1.0,1.0,D:\Amazon Project\person2\models\person2_randomforest.joblib
+LightGBM,24,2407,89,2318,0.0357,0.0028,0.23,1.0,1.0,D:\Amazon Project\person2\models\person2_lightgbm.joblib

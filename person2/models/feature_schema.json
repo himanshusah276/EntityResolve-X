@@ -1,0 +1,30 @@
+{
+  "feature_names": [
+    "name_jaccard",
+    "name_levenshtein",
+    "name_tfidf_cosine",
+    "name_token_overlap",
+    "name_character_similarity",
+    "name_exact_match",
+    "name_shared_token_count",
+    "name_length_ratio",
+    "name_length_difference",
+    "address_jaccard",
+    "address_levenshtein",
+    "address_tfidf_cosine",
+    "address_token_overlap",
+    "address_character_similarity",
+    "address_exact_match",
+    "address_shared_token_count",
+    "address_shared_numeric_token_count",
+    "address_numeric_token_overlap",
+    "address_length_ratio",
+    "address_length_difference",
+    "country_match",
+    "total_shared_token_count",
+    "shared_numeric_token_count",
+    "numeric_token_overlap"
+  ],
+  "n_features": 24,
+  "seed": 42
+}
