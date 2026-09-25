@@ -1,0 +1,210 @@
+entity_id	business_name	business_address	country
+S3-00001	Apex Logistics Ltd #1	14 Victoria Blvd, New York 10037	US
+S3-00002	Beacon Finance Corp #2	27 Oakland St., Yokohama 10074	Japan
+S3-00003	Falcon Security #6	79 Oakland Ave, San Francisco 10222	US
+S3-00004	Harbor Point Stores #8	105 Oakland Rd, Toronto 10296	Canada
+S3-00005	Jupiter Data #10	131 Oakland Ave, Chicago 10370	US
+S3-00006	Radiant Solar #18	235 Oakland Blvd, Manchester 10666	UK
+S3-00007	Acme Tech #20	261 Oakland St., Austin 10740	US
+S3-00008	Delta Precision Eng #24	313 Oakland Rd, Munich 10888	Germany
+S3-00009	Falcon Security #26	339 Oakland Ave, Stuttgart 10962	Germany
+S3-00010	Genesis BioPharma #27	352 Victoria Rd, Tokyo 10999	Japan
+S3-00011	Harbor Point Stores #28	365 Oakland St., Toulouse 11036	France
+S3-00012	Matrix Cloud #33	430 Victoria Blvd, Marseille 11221	France
+S3-00013	Nexus Energy #34	443 Oakland Blvd, Delhi 11258	India
+S3-00014	Radiant Solar #38	495 Oakland Rd, Delhi 11406	India
+S3-00015	Lighthouse Studio #52	677 Oakland Ave, Yokohama 11924	Japan
+S3-00016	Summit Wealth #59	768 Victoria St., Berlin 12183	Germany
+S3-00017	Acme Tech #60	781 Oakland Ave, New York 12220	US
+S3-00018	Apex Logistics Ltd #61	794 Victoria Rd, Hamburg 12257	Germany
+S3-00019	Beacon Finance Corp #62	807 Oakland Rd, Lyon 12294	France
+S3-00020	Jupiter Data #70	911 Oakland Rd, Kyoto 12590	Japan
+S3-00021	Keystone Soft #71	924 Victoria St., Paris 12627	France
+S3-00022	Nexus Energy #74	963 Oakland Rd, Austin 12738	US
+S3-00023	Quantum Dyn #77	3 Victoria Ave, Austin 12849	US
+S3-00024	Crestview Health Clinic #83	81 Victoria Blvd, Nice 13071	France
+S3-00025	Echo Media Group #85	107 Victoria Blvd, Bengaluru 13145	India
+S3-00026	Matrix Cloud #93	211 Victoria Ave, Montreal 13441	Canada
+S3-00027	Summit Wealth #99	289 Victoria Blvd, Manchester 13663	UK
+S3-00028	Acme Tech #100	302 Oakland Blvd, Yokohama 13700	Japan
+S3-00029	Falcon Security #106	380 Oakland Rd, Lyon 13922	France
+S3-00030	Harbor Point Stores #108	406 Oakland Rd, Birmingham 13996	UK
+S3-00031	Jupiter Data #110	432 Oakland St., Osaka 14070	Japan
+S3-00032	Matrix Cloud #113	471 Victoria Ave, Yokohama 14181	Japan
+S3-00033	Orion Aero #115	497 Victoria Blvd, Berlin 14255	Germany
+S3-00034	Radiant Solar #118	536 Oakland Rd, Stuttgart 14366	Germany
+S3-00035	Echo Media Group #125	627 Victoria Blvd, Marseille 14625	France
+S3-00036	Harbor Point Stores #128	666 Oakland Ave, Nice 14736	France
+S3-00037	Jupiter Data #130	692 Oakland St., Austin 14810	US
+S3-00038	Keystone Soft #131	705 Victoria St., San Francisco 14847	US
+S3-00039	Nexus Energy #134	744 Oakland Rd, Manchester 14958	UK
+S3-00040	Orion Aero #135	757 Victoria Blvd, London 14995	UK
+S3-00041	Pioneer Robotics #136	770 Oakland Ave, Chicago 15032	US
+S3-00042	Radiant Solar #138	796 Oakland Blvd, Manchester 15106	UK
+S3-00043	Acme Tech #140	822 Oakland Blvd, San Francisco 15180	US
+S3-00044	Apex Logistics Ltd #141	835 Victoria Blvd, Nice 15217	France
+S3-00045	Beacon Finance Corp #142	848 Oakland St., Ottawa 15254	Canada
+S3-00046	Delta Precision Eng #144	874 Oakland Ave, Delhi 15328	India
+S3-00047	Echo Media Group #145	887 Victoria Blvd, New York 15365	US
+S3-00048	Falcon Security #146	900 Oakland St., Pune 15402	India
+S3-00049	Harbor Point Stores #148	926 Oakland St., Austin 15476	US
+S3-00050	Jupiter Data #150	952 Oakland Blvd, Lyon 15550	France
+S3-00051	Matrix Cloud #153	991 Victoria Ave, Berlin 15661	Germany
+S3-00052	Apex Logistics Ltd #161	96 Victoria Ave, Yokohama 15957	Japan
+S3-00053	Delta Precision Eng #164	135 Oakland Blvd, Stuttgart 16068	Germany
+S3-00054	Echo Media Group #165	148 Victoria Ave, Manchester 16105	UK
+S3-00055	Genesis BioPharma #167	174 Victoria St., New York 16179	US
+S3-00056	Ironclad Ind #169	200 Victoria Ave, Paris 16253	France
+S3-00057	Lighthouse Studio #172	239 Oakland Ave, Nagoya 16364	Japan
+S3-00058	Matrix Cloud #173	252 Victoria Rd, Edinburgh 16401	UK
+S3-00059	Pioneer Robotics #176	291 Oakland Ave, Pune 16512	India
+S3-00060	Quantum Dyn #177	304 Victoria Ave, Calgary 16549	Canada
+S3-00061	Echo Media Group #185	408 Victoria Ave, Hamburg 16845	Germany
+S3-00062	Ironclad Ind #189	460 Victoria Rd, Vancouver 16993	Canada
+S3-00063	Keystone Soft #191	486 Victoria St., Hamburg 17067	Germany
+S3-00064	Orion Aero #195	538 Victoria Rd, Yokohama 17215	Japan
+S3-00065	Quantum Dyn #197	564 Victoria Blvd, Vancouver 17289	Canada
+S3-00066	Radiant Solar #198	577 Oakland Ave, Toronto 17326	Canada
+S3-00067	Acme Tech #200	603 Oakland Ave, Toronto 17400	Canada
+S3-00068	Beacon Finance Corp #202	629 Oakland St., Chicago 17474	US
+S3-00069	Delta Precision Eng #204	655 Oakland St., Toronto 17548	Canada
+S3-00070	Echo Media Group #205	668 Victoria Ave, Hyderabad 17585	India
+S3-00071	Genesis BioPharma #207	694 Victoria Rd, Toulouse 17659	France
+S3-00072	Harbor Point Stores #208	707 Oakland Blvd, Osaka 17696	Japan
+S3-00073	Keystone Soft #211	746 Victoria Blvd, Toronto 17807	Canada
+S3-00074	Lighthouse Studio #212	759 Oakland Rd, Manchester 17844	UK
+S3-00075	Orion Aero #215	798 Victoria St., Paris 17955	France
+S3-00076	Pioneer Robotics #216	811 Oakland St., Kyoto 17992	Japan
+S3-00077	Falcon Security #226	941 Oakland Ave, Montreal 18362	Canada
+S3-00078	Genesis BioPharma #227	954 Victoria St., Manchester 18399	UK
+S3-00079	Jupiter Data #230	993 Oakland Rd, Frankfurt 18510	Germany
+S3-00080	Keystone Soft #231	7 Victoria Rd, Vancouver 18547	Canada
+S3-00081	Lighthouse Studio #232	20 Oakland Ave, London 18584	UK
+S3-00082	Matrix Cloud #233	33 Victoria Ave, Mumbai 18621	India
+S3-00083	Summit Wealth #239	111 Victoria Rd, Kyoto 18843	Japan
+S3-00084	Ironclad Ind #249	241 Victoria Rd, Bengaluru 19213	India
+S3-00085	Distractor Entity Group 0 Subsidiary	100 Industrial Way, Sector 0, 560001	Japan
+S3-00086	Distractor Entity Group 1 Subsidiary	101 Industrial Way, Sector 1, 560001	Japan
+S3-00087	Distractor Entity Group 2 Subsidiary	102 Industrial Way, Sector 2, 560001	Germany
+S3-00088	Distractor Entity Group 3 Subsidiary	103 Industrial Way, Sector 3, 560001	India
+S3-00089	Distractor Entity Group 4 Subsidiary	104 Industrial Way, Sector 4, 560001	US
+S3-00090	Distractor Entity Group 5 Subsidiary	105 Industrial Way, Sector 5, 560001	Germany
+S3-00091	Distractor Entity Group 6 Subsidiary	106 Industrial Way, Sector 6, 560001	India
+S3-00092	Distractor Entity Group 7 Subsidiary	107 Industrial Way, Sector 7, 560001	Japan
+S3-00093	Distractor Entity Group 8 Subsidiary	108 Industrial Way, Sector 8, 560001	Japan
+S3-00094	Distractor Entity Group 9 Subsidiary	109 Industrial Way, Sector 9, 560001	UK
+S3-00095	Distractor Entity Group 10 Subsidiary	110 Industrial Way, Sector 10, 560001	Germany
+S3-00096	Distractor Entity Group 11 Subsidiary	111 Industrial Way, Sector 11, 560001	US
+S3-00097	Distractor Entity Group 12 Subsidiary	112 Industrial Way, Sector 12, 560001	India
+S3-00098	Distractor Entity Group 13 Subsidiary	113 Industrial Way, Sector 13, 560001	UK
+S3-00099	Distractor Entity Group 14 Subsidiary	114 Industrial Way, Sector 14, 560001	Germany
+S3-00100	Distractor Entity Group 15 Subsidiary	115 Industrial Way, Sector 15, 560001	Japan
+S3-00101	Distractor Entity Group 16 Subsidiary	116 Industrial Way, Sector 16, 560001	Germany
+S3-00102	Distractor Entity Group 17 Subsidiary	117 Industrial Way, Sector 17, 560001	India
+S3-00103	Distractor Entity Group 18 Subsidiary	118 Industrial Way, Sector 18, 560001	Canada
+S3-00104	Distractor Entity Group 19 Subsidiary	119 Industrial Way, Sector 19, 560001	UK
+S3-00105	Distractor Entity Group 20 Subsidiary	120 Industrial Way, Sector 20, 560001	Canada
+S3-00106	Distractor Entity Group 21 Subsidiary	121 Industrial Way, Sector 21, 560001	UK
+S3-00107	Distractor Entity Group 22 Subsidiary	122 Industrial Way, Sector 22, 560001	France
+S3-00108	Distractor Entity Group 23 Subsidiary	123 Industrial Way, Sector 23, 560001	India
+S3-00109	Distractor Entity Group 24 Subsidiary	124 Industrial Way, Sector 24, 560001	India
+S3-00110	Distractor Entity Group 25 Subsidiary	125 Industrial Way, Sector 25, 560001	Canada
+S3-00111	Distractor Entity Group 26 Subsidiary	126 Industrial Way, Sector 26, 560001	Germany
+S3-00112	Distractor Entity Group 27 Subsidiary	127 Industrial Way, Sector 27, 560001	Germany
+S3-00113	Distractor Entity Group 28 Subsidiary	128 Industrial Way, Sector 28, 560001	Canada
+S3-00114	Distractor Entity Group 29 Subsidiary	129 Industrial Way, Sector 29, 560001	Japan
+S3-00115	Distractor Entity Group 30 Subsidiary	130 Industrial Way, Sector 30, 560001	Canada
+S3-00116	Distractor Entity Group 31 Subsidiary	131 Industrial Way, Sector 31, 560001	Canada
+S3-00117	Distractor Entity Group 32 Subsidiary	132 Industrial Way, Sector 32, 560001	US
+S3-00118	Distractor Entity Group 33 Subsidiary	133 Industrial Way, Sector 33, 560001	France
+S3-00119	Distractor Entity Group 34 Subsidiary	134 Industrial Way, Sector 34, 560001	UK
+S3-00120	Distractor Entity Group 35 Subsidiary	135 Industrial Way, Sector 35, 560001	UK
+S3-00121	Distractor Entity Group 36 Subsidiary	136 Industrial Way, Sector 36, 560001	India
+S3-00122	Distractor Entity Group 37 Subsidiary	137 Industrial Way, Sector 37, 560001	France
+S3-00123	Distractor Entity Group 38 Subsidiary	138 Industrial Way, Sector 38, 560001	Germany
+S3-00124	Distractor Entity Group 39 Subsidiary	139 Industrial Way, Sector 39, 560001	UK
+S3-00125	Distractor Entity Group 40 Subsidiary	140 Industrial Way, Sector 40, 560001	US
+S3-00126	Distractor Entity Group 41 Subsidiary	141 Industrial Way, Sector 41, 560001	Japan
+S3-00127	Distractor Entity Group 42 Subsidiary	142 Industrial Way, Sector 42, 560001	France
+S3-00128	Distractor Entity Group 43 Subsidiary	143 Industrial Way, Sector 43, 560001	India
+S3-00129	Distractor Entity Group 44 Subsidiary	144 Industrial Way, Sector 44, 560001	Germany
+S3-00130	Distractor Entity Group 45 Subsidiary	145 Industrial Way, Sector 45, 560001	France
+S3-00131	Distractor Entity Group 46 Subsidiary	146 Industrial Way, Sector 46, 560001	Japan
+S3-00132	Distractor Entity Group 47 Subsidiary	147 Industrial Way, Sector 47, 560001	France
+S3-00133	Distractor Entity Group 48 Subsidiary	148 Industrial Way, Sector 48, 560001	UK
+S3-00134	Distractor Entity Group 49 Subsidiary	149 Industrial Way, Sector 49, 560001	US
+S3-00135	Distractor Entity Group 50 Subsidiary	150 Industrial Way, Sector 50, 560001	Canada
+S3-00136	Distractor Entity Group 51 Subsidiary	151 Industrial Way, Sector 51, 560001	US
+S3-00137	Distractor Entity Group 52 Subsidiary	152 Industrial Way, Sector 52, 560001	UK
+S3-00138	Distractor Entity Group 53 Subsidiary	153 Industrial Way, Sector 53, 560001	France
+S3-00139	Distractor Entity Group 54 Subsidiary	154 Industrial Way, Sector 54, 560001	France
+S3-00140	Distractor Entity Group 55 Subsidiary	155 Industrial Way, Sector 55, 560001	US
+S3-00141	Distractor Entity Group 56 Subsidiary	156 Industrial Way, Sector 56, 560001	Japan
+S3-00142	Distractor Entity Group 57 Subsidiary	157 Industrial Way, Sector 57, 560001	India
+S3-00143	Distractor Entity Group 58 Subsidiary	158 Industrial Way, Sector 58, 560001	Japan
+S3-00144	Distractor Entity Group 59 Subsidiary	159 Industrial Way, Sector 59, 560001	UK
+S3-00145	Distractor Entity Group 60 Subsidiary	160 Industrial Way, Sector 60, 560001	UK
+S3-00146	Distractor Entity Group 61 Subsidiary	161 Industrial Way, Sector 61, 560001	Japan
+S3-00147	Distractor Entity Group 62 Subsidiary	162 Industrial Way, Sector 62, 560001	France
+S3-00148	Distractor Entity Group 63 Subsidiary	163 Industrial Way, Sector 63, 560001	UK
+S3-00149	Distractor Entity Group 64 Subsidiary	164 Industrial Way, Sector 64, 560001	UK
+S3-00150	Distractor Entity Group 65 Subsidiary	165 Industrial Way, Sector 65, 560001	France
+S3-00151	Distractor Entity Group 66 Subsidiary	166 Industrial Way, Sector 66, 560001	US
+S3-00152	Distractor Entity Group 67 Subsidiary	167 Industrial Way, Sector 67, 560001	Canada
+S3-00153	Distractor Entity Group 68 Subsidiary	168 Industrial Way, Sector 68, 560001	India
+S3-00154	Distractor Entity Group 69 Subsidiary	169 Industrial Way, Sector 69, 560001	Japan
+S3-00155	Distractor Entity Group 70 Subsidiary	170 Industrial Way, Sector 70, 560001	India
+S3-00156	Distractor Entity Group 71 Subsidiary	171 Industrial Way, Sector 71, 560001	US
+S3-00157	Distractor Entity Group 72 Subsidiary	172 Industrial Way, Sector 72, 560001	UK
+S3-00158	Distractor Entity Group 73 Subsidiary	173 Industrial Way, Sector 73, 560001	India
+S3-00159	Distractor Entity Group 74 Subsidiary	174 Industrial Way, Sector 74, 560001	Japan
+S3-00160	Distractor Entity Group 75 Subsidiary	175 Industrial Way, Sector 75, 560001	Japan
+S3-00161	Distractor Entity Group 76 Subsidiary	176 Industrial Way, Sector 76, 560001	US
+S3-00162	Distractor Entity Group 77 Subsidiary	177 Industrial Way, Sector 77, 560001	India
+S3-00163	Distractor Entity Group 78 Subsidiary	178 Industrial Way, Sector 78, 560001	UK
+S3-00164	Distractor Entity Group 79 Subsidiary	179 Industrial Way, Sector 79, 560001	Germany
+S3-00165	Distractor Entity Group 80 Subsidiary	180 Industrial Way, Sector 80, 560001	US
+S3-00166	Distractor Entity Group 81 Subsidiary	181 Industrial Way, Sector 81, 560001	Canada
+S3-00167	Distractor Entity Group 82 Subsidiary	182 Industrial Way, Sector 82, 560001	India
+S3-00168	Distractor Entity Group 83 Subsidiary	183 Industrial Way, Sector 83, 560001	US
+S3-00169	Distractor Entity Group 84 Subsidiary	184 Industrial Way, Sector 84, 560001	Canada
+S3-00170	Distractor Entity Group 85 Subsidiary	185 Industrial Way, Sector 85, 560001	US
+S3-00171	Distractor Entity Group 86 Subsidiary	186 Industrial Way, Sector 86, 560001	Germany
+S3-00172	Distractor Entity Group 87 Subsidiary	187 Industrial Way, Sector 87, 560001	Canada
+S3-00173	Distractor Entity Group 88 Subsidiary	188 Industrial Way, Sector 88, 560001	Japan
+S3-00174	Distractor Entity Group 89 Subsidiary	189 Industrial Way, Sector 89, 560001	Japan
+S3-00175	Distractor Entity Group 90 Subsidiary	190 Industrial Way, Sector 90, 560001	France
+S3-00176	Distractor Entity Group 91 Subsidiary	191 Industrial Way, Sector 91, 560001	US
+S3-00177	Distractor Entity Group 92 Subsidiary	192 Industrial Way, Sector 92, 560001	Japan
+S3-00178	Distractor Entity Group 93 Subsidiary	193 Industrial Way, Sector 93, 560001	Canada
+S3-00179	Distractor Entity Group 94 Subsidiary	194 Industrial Way, Sector 94, 560001	US
+S3-00180	Distractor Entity Group 95 Subsidiary	195 Industrial Way, Sector 95, 560001	Canada
+S3-00181	Distractor Entity Group 96 Subsidiary	196 Industrial Way, Sector 96, 560001	France
+S3-00182	Distractor Entity Group 97 Subsidiary	197 Industrial Way, Sector 97, 560001	Germany
+S3-00183	Distractor Entity Group 98 Subsidiary	198 Industrial Way, Sector 98, 560001	India
+S3-00184	Distractor Entity Group 99 Subsidiary	199 Industrial Way, Sector 99, 560001	Japan
+S3-00185	Distractor Entity Group 100 Subsidiary	200 Industrial Way, Sector 100, 560001	India
+S3-00186	Distractor Entity Group 101 Subsidiary	201 Industrial Way, Sector 101, 560001	India
+S3-00187	Distractor Entity Group 102 Subsidiary	202 Industrial Way, Sector 102, 560001	UK
+S3-00188	Distractor Entity Group 103 Subsidiary	203 Industrial Way, Sector 103, 560001	US
+S3-00189	Distractor Entity Group 104 Subsidiary	204 Industrial Way, Sector 104, 560001	Germany
+S3-00190	Distractor Entity Group 105 Subsidiary	205 Industrial Way, Sector 105, 560001	Japan
+S3-00191	Distractor Entity Group 106 Subsidiary	206 Industrial Way, Sector 106, 560001	US
+S3-00192	Distractor Entity Group 107 Subsidiary	207 Industrial Way, Sector 107, 560001	France
+S3-00193	Distractor Entity Group 108 Subsidiary	208 Industrial Way, Sector 108, 560001	France
+S3-00194	Distractor Entity Group 109 Subsidiary	209 Industrial Way, Sector 109, 560001	Japan
+S3-00195	Distractor Entity Group 110 Subsidiary	210 Industrial Way, Sector 110, 560001	Canada
+S3-00196	Distractor Entity Group 111 Subsidiary	211 Industrial Way, Sector 111, 560001	UK
+S3-00197	Distractor Entity Group 112 Subsidiary	212 Industrial Way, Sector 112, 560001	India
+S3-00198	Distractor Entity Group 113 Subsidiary	213 Industrial Way, Sector 113, 560001	US
+S3-00199	Distractor Entity Group 114 Subsidiary	214 Industrial Way, Sector 114, 560001	US
+S3-00200	Distractor Entity Group 115 Subsidiary	215 Industrial Way, Sector 115, 560001	Japan
+S3-00201	Distractor Entity Group 116 Subsidiary	216 Industrial Way, Sector 116, 560001	India
+S3-00202	Distractor Entity Group 117 Subsidiary	217 Industrial Way, Sector 117, 560001	India
+S3-00203	Distractor Entity Group 118 Subsidiary	218 Industrial Way, Sector 118, 560001	UK
+S3-00204	Distractor Entity Group 119 Subsidiary	219 Industrial Way, Sector 119, 560001	Canada
+S3-00205	Distractor Entity Group 120 Subsidiary	220 Industrial Way, Sector 120, 560001	UK
+S3-00206	Distractor Entity Group 121 Subsidiary	221 Industrial Way, Sector 121, 560001	India
+S3-00207	Distractor Entity Group 122 Subsidiary	222 Industrial Way, Sector 122, 560001	Japan
+S3-00208	Distractor Entity Group 123 Subsidiary	223 Industrial Way, Sector 123, 560001	Japan
+S3-00209	Distractor Entity Group 124 Subsidiary	224 Industrial Way, Sector 124, 560001	India

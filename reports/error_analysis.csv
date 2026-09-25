@@ -1,0 +1,2 @@
+source1_entity_id,candidate_entity_id,source1_name,candidate_name,source1_address,candidate_address,source1_country,candidate_country,prediction_score,true_label,error_type
+S1-00186,S3-00003,Falcon Security Systems #186,Falcon Security #6,"421 Oakland Avenue, San Francisco 16882","79 Oakland Ave, San Francisco 10222",US,US,0.6648,0,numeric_conflict
