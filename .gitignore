@@ -1,2 +1,15 @@
 __pycache__/
 *.pyc
+.venv/
+data/
+dataset/
+business_entity_resolution/
+person2/data/
+*.parquet
+*.tsv
+*.csv
+!person2/outputs/person2_feature_schema.csv
+!person2/outputs/person2_model_info.csv
+person2/models/*.joblib
+person2/models/*.txt
+person2/models/*.bin
